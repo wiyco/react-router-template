@@ -28,6 +28,7 @@
 
 ### Other
 
+- [@tanstack/react-query](https://tanstack.com/query/latest/docs/framework/react/overview)
 - [framer-motion](https://www.framer.com/motion)
 - [tailwind-variants](https://www.tailwind-variants.org)
 - [clsx & tailwind-merge](./src/utils/cn.ts)
