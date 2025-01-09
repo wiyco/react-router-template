@@ -1,6 +1,6 @@
 # react-router-template
 
-[React Router](https://reactrouter.com/home) framework starter repository 🐢
+[React Router](https://github.com/remix-run/react-router) framework starter repository 🐢
 
 ## Tech Stack
 
