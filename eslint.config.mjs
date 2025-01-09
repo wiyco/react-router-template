@@ -3,6 +3,7 @@
 import { fixupConfigRules } from "@eslint/compat";
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
+import tanstackQuery from "@tanstack/eslint-plugin-query";
 import vitest from "@vitest/eslint-plugin";
 import prettier from "eslint-config-prettier";
 import { flatConfigs as importflatConfigs } from "eslint-plugin-import";
@@ -42,6 +43,8 @@ const config = ts.config(
       ],
     },
   },
+  // plugin:@tanstack/query/recommended
+  tanstackQuery.configs["flat/recommended"],
   // eslint:recommended
   js.configs.recommended,
   // plugin:@typescript-eslint/recommended
