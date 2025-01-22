@@ -28,23 +28,10 @@ const compat = new FlatCompat({
 const config = ts.config(
   {
     files: ["**/*.{js,jsx,ts,tsx}", "**/*.{cjs,mjs,cts,mts}"],
-    ignores: [".react-router/"], // + Default ignores ["**/node_modules/", ".git/"]
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
-    rules: {
-      "@typescript-eslint/no-empty-object-type": [
-        "error",
-        {
-          allowWithName: "Props$", // Allow empty object types with a name ending with "Props".
-        },
-      ],
-    },
   },
-  // plugin:@tanstack/query/recommended
-  tanstackQuery.configs["flat/recommended"],
+  {
+    ignores: [".react-router/"], // + Default ignores ["**/node_modules/", ".git/"]
+  },
   // eslint:recommended
   js.configs.recommended,
   // plugin:@typescript-eslint/recommended
@@ -53,10 +40,19 @@ const config = ts.config(
   react.configs.flat?.recommended ?? {},
   // plugin:react/jsx-runtime
   react.configs.flat?.["jsx-runtime"] ?? {},
+  {
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+  },
   // plugin:react-hooks/recommended
   ...fixupConfigRules(compat.extends("plugin:react-hooks/recommended")), // Replace "plugin:" syntax when flat config is supported
   // plugin:jsx-a11y/recommended
   jsxA11y.flatConfigs.recommended,
+  // plugin:@tanstack/query/recommended
+  tanstackQuery.configs["flat/recommended"],
   // plugin:@vitest/recommended
   vitest.configs.recommended,
   // plugin:jest-dom/recommended
@@ -111,9 +107,16 @@ const config = ts.config(
   },
   // prettier - Disable eslint rules that conflict with prettier.
   prettier,
+  // Custom rules
   {
     rules: {
       "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-empty-object-type": [
+        "error",
+        {
+          allowWithName: "Props$", // Allow empty object types with a name ending with "Props".
+        },
+      ],
     },
   }
 );
