@@ -30,7 +30,7 @@ const config = ts.config(
     files: ["**/*.{js,jsx,ts,tsx}", "**/*.{cjs,mjs,cts,mts}"],
   },
   {
-    ignores: [".react-router/"], // + Default ignores ["**/node_modules/", ".git/"]
+    ignores: [".react-router/", "build/"], // + Default ignores ["**/node_modules/", ".git/"]
   },
   // eslint:recommended
   js.configs.recommended,

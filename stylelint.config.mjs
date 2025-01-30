@@ -14,6 +14,12 @@ const config = {
         ignoreAtRules: ["tailwind"],
       },
     ],
+    "at-rule-no-deprecated": [
+      true,
+      {
+        ignoreAtRules: ["apply"], // Allow `@apply` directive
+      },
+    ],
   },
 };
 
