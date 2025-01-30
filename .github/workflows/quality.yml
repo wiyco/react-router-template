@@ -1,16 +1,17 @@
-name: Build
+name: Quality
 on:
+  push:
+    branches:
+      - develop
+
   pull_request:
     branches:
       - main
-    paths:
-      - "src/**"
-      - ".storybook/**"
-      - "stories/**"
+      - develop
 
 jobs:
-  react-router:
-    name: React Router
+  eslint:
+    name: ESLint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,11 +29,11 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
 
-      - name: Build React Router
-        run: pnpm react-router build
+      - name: Run ESLint checks
+        run: pnpm lint:es
 
-  storybook:
-    name: Storybook
+  stylelint:
+    name: Stylelint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -50,5 +51,27 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
 
-      - name: Build Storybook
-        run: pnpm storybook build
+      - name: Run Stylelint checks
+        run: pnpm lint:style
+
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
+
+      - name: Run Prettier checks
+        run: pnpm format:check
