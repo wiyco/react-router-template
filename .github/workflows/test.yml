@@ -9,6 +9,7 @@ on:
       - "test/**"
       - "package.json"
       - "pnpm-lock.yaml"
+      - ".github/workflows/test.yml"
 
 jobs:
   vitest:
