@@ -7,6 +7,8 @@ on:
       - "src/**"
       - ".storybook/**"
       - "stories/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
 
 jobs:
   react-router:
