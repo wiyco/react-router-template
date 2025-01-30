@@ -9,6 +9,7 @@ on:
       - "stories/**"
       - "package.json"
       - "pnpm-lock.yaml"
+      - ".github/workflows/build.yml"
 
 jobs:
   react-router:
