@@ -10,6 +10,7 @@ import {
 import stylesheet from "~/styles/globals.scss?url";
 
 import type { Route } from "./+types/root";
+import { Providers } from "./providers";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -35,7 +36,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <Providers>{children}</Providers>
         <ScrollRestoration />
         <Scripts />
       </body>
