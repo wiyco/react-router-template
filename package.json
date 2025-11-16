@@ -31,7 +31,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@react-router/node": "^7.9.6",
     "@react-router/serve": "^7.9.6",
-    "@tanstack/react-query": "5.90.7",
+    "@tanstack/react-query": "5.90.9",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
     "isbot": "^5.1.32",
@@ -39,7 +39,7 @@
     "react-dom": "^19.2.0",
     "react-hook-form": "^7.66.0",
     "react-router": "^7.9.6",
-    "tailwind-merge": "^3.3.0",
+    "tailwind-merge": "^3.4.0",
     "tailwind-variants": "^3.1.1",
     "zod": "^4.1.12"
   },
