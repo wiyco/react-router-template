@@ -8,15 +8,14 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-onboarding",
     "@storybook/addon-links",
-    "@storybook/addon-essentials",
+    "@storybook/addon-themes",
     "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
   ],
   framework: {
     name: "@storybook/react-vite",
     options: {
       builder: {
-        viteConfigPath: "./vite.sb.config.ts", // Base directory is the project root
+        viteConfigPath: "./vite.sb.config.ts",
       },
     },
   },

@@ -35,6 +35,7 @@ yarn-error.log*
 
 # storybook
 *storybook.log
+storybook-static
 
 # cache
 .*cache
