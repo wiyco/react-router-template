@@ -1,11 +1,14 @@
 // @ts-check
 
-import { FlatCompat } from "@eslint/eslintrc";
+import { fileURLToPath } from "node:url";
+
+import { includeIgnoreFile } from "@eslint/compat";
 import js from "@eslint/js";
 import tanstackQuery from "@tanstack/eslint-plugin-query";
 import vitest from "@vitest/eslint-plugin";
+import { defineConfig, globalIgnores } from "eslint/config";
 import prettier from "eslint-config-prettier";
-import { flatConfigs as importflatConfigs } from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-import";
 import jestDom from "eslint-plugin-jest-dom";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import react from "eslint-plugin-react";
@@ -14,69 +17,35 @@ import simpleImportSort from "eslint-plugin-simple-import-sort";
 import storybook from "eslint-plugin-storybook";
 import testingLibrary from "eslint-plugin-testing-library";
 import unusedImports from "eslint-plugin-unused-imports";
-import { dirname } from "path";
+import globals from "globals";
 import ts from "typescript-eslint";
-import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+/** @see https://eslint.org/docs/latest/use/configure/ignore#including-gitignore-files */
+const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
 
-const _compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const config = ts.config(
+export default defineConfig([
+  includeIgnoreFile(gitignorePath, "Imported .gitignore patterns"),
+  globalIgnores([".react-router/**", "build/**"]),
   {
-    files: ["**/*.{js,jsx,ts,tsx}", "**/*.{cjs,mjs,cts,mts}"],
-  },
-  {
-    ignores: [".react-router/", "build/"], // + Default ignores ["**/node_modules/", ".git/"]
-  },
-  // eslint:recommended
-  js.configs.recommended,
-  // plugin:@typescript-eslint/recommended
-  ...ts.configs.recommended,
-  // plugin:react/recommended
-  react.configs.flat?.recommended ?? {},
-  // plugin:react/jsx-runtime
-  react.configs.flat?.["jsx-runtime"] ?? {},
-  {
-    settings: {
-      react: {
-        version: "detect",
+    files: ["**/*.{js,jsx,ts,tsx,cjs,mjs,cts,mts}"],
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      globals: {
+        ...globals.browser,
       },
     },
   },
-  // plugin:react-hooks/recommended
-  reactHooks.configs["recommended-latest"],
-  // plugin:jsx-a11y/recommended
-  jsxA11y.flatConfigs.recommended,
-  // plugin:@tanstack/query/recommended
-  tanstackQuery.configs["flat/recommended"],
-  // plugin:@vitest/recommended
-  vitest.configs.recommended,
-  // plugin:jest-dom/recommended
-  jestDom.configs["flat/recommended"],
-  // plugin:testing-library/react
-  testingLibrary.configs["flat/react"],
-  // plugin:storybook/recommended
-  ...storybook.configs["flat/recommended"],
-  // plugins: ["import"] - Custom configuration
+  js.configs.recommended,
+  ...ts.configs.recommended,
   {
     plugins: {
-      import:
-        importflatConfigs.recommended.plugins
-          .import /** @see createFlatConfig */,
-    },
-  },
-  // plugins: ["simple-import-sort"] - Recommended configuration
-  {
-    plugins: {
-      "simple-import-sort": simpleImportSort,
+      import: importPlugin,
     },
     rules: {
-      "simple-import-sort/imports": "warn",
-      "simple-import-sort/exports": "warn",
       "import/first": "warn",
       "import/newline-after-import": "warn",
       "import/no-duplicates": "warn",
@@ -85,7 +54,15 @@ const config = ts.config(
       "import/internal-regex": "^~/",
     },
   },
-  // plugins: ["unused-imports"] - Recommended configuration
+  {
+    plugins: {
+      "simple-import-sort": simpleImportSort,
+    },
+    rules: {
+      "simple-import-sort/imports": "warn",
+      "simple-import-sort/exports": "warn",
+    },
+  },
   {
     plugins: {
       "unused-imports": unusedImports,
@@ -105,20 +82,32 @@ const config = ts.config(
       ],
     },
   },
-  // prettier - Disable eslint rules that conflict with prettier.
+  react.configs.flat.recommended,
+  reactHooks.configs.flat.recommended,
+  {
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+  },
+  jsxA11y.flatConfigs.recommended,
+  ...tanstackQuery.configs["flat/recommended"],
+  vitest.configs.recommended,
+  jestDom.configs["flat/recommended"],
+  testingLibrary.configs["flat/react"],
+  ...storybook.configs["flat/recommended"],
   prettier,
-  // Custom rules
   {
     rules: {
       "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/no-empty-object-type": [
-        "error",
+        "warn",
         {
-          allowWithName: "Props$", // Allow empty object types with a name ending with "Props".
+          allowWithName: "Props$",
         },
       ],
+      "react/react-in-jsx-scope": "off",
     },
-  }
-);
-
-export default config;
+  },
+]);
