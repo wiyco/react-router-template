@@ -139,8 +139,8 @@ importers:
         specifier: ^7.37.5
         version: 7.37.5(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-react-hooks:
-        specifier: ^5.2.0
-        version: 5.2.0(eslint@9.39.1(jiti@2.6.1))
+        specifier: ^7.0.1
+        version: 7.0.1(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-simple-import-sort:
         specifier: ^12.1.1
         version: 12.1.1(eslint@9.39.1(jiti@2.6.1))
@@ -153,6 +153,9 @@ importers:
       eslint-plugin-unused-imports:
         specifier: ^4.3.0
         version: 4.3.0(@typescript-eslint/eslint-plugin@8.48.0(@typescript-eslint/parser@8.48.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))
+      globals:
+        specifier: ^16.5.0
+        version: 16.5.0
       jsdom:
         specifier: ^27.2.0
         version: 27.2.0
@@ -2239,9 +2242,9 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-react-hooks@5.2.0:
-    resolution: {integrity: sha512-+f15FfK64YQwZdJNELETdn5ibXEUQmW1DZL6KXhNnc2heoy/sg9VJJeT7n8TlMWouzWqSWavFkIhHyIbIAEapg==}
-    engines: {node: '>=10'}
+  eslint-plugin-react-hooks@7.0.1:
+    resolution: {integrity: sha512-O0d0m04evaNzEPoSW+59Mezf8Qt0InfgGIBJnpC0h3NH/WjUAR7BIKUfysC6todmtiZ/A0oUVS8Gce0WhBrHsA==}
+    engines: {node: '>=18'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
 
@@ -2503,6 +2506,10 @@ packages:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
     engines: {node: '>=18'}
 
+  globals@16.5.0:
+    resolution: {integrity: sha512-c/c15i26VrJ4IRt5Z89DnIzCGDn9EcebibhAOjw5ibqEHsE1wLUgkPn9RDmNcUKyU87GeaL633nyJ+pplFR2ZQ==}
+    engines: {node: '>=18'}
+
   globalthis@1.0.4:
     resolution: {integrity: sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ==}
     engines: {node: '>= 0.4'}
@@ -2557,6 +2564,12 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
+
+  hermes-estree@0.25.1:
+    resolution: {integrity: sha512-0wUoCcLp+5Ev5pDW2OriHC2MJCbwLwuRx+gAqMTOkGKJJiBCLjtrvy4PWUGn6MIVefecRpzoOZ/UV6iGdOr+Cw==}
+
+  hermes-parser@0.25.1:
+    resolution: {integrity: sha512-6pEjquH3rqaI6cYAXYPcz9MS4rY6R4ngRgrgfDshRptUZIc3lw0MCIJIGDj9++mfySOuPTHB4nrSW99BCvOPIA==}
 
   hookified@1.13.0:
     resolution: {integrity: sha512-6sPYUY8olshgM/1LDNW4QZQN0IqgKhtl/1C8koNZBJrKLBk3AZl6chQtNwpNztvfiApHMEwMHek5rv993PRbWw==}
@@ -4416,6 +4429,12 @@ packages:
 
   zimmerframe@1.1.4:
     resolution: {integrity: sha512-B58NGBEoc8Y9MWWCQGl/gq9xBCe4IiKM0a2x7GZdQKOW5Exr8S1W24J6OgM1njK8xCRGvAJIL/MxXHf6SkmQKQ==}
+
+  zod-validation-error@4.0.2:
+    resolution: {integrity: sha512-Q6/nZLe6jxuU80qb/4uJ4t5v2VEZ44lzQjPDhYJNztRQ4wyWc6VF3D3Kb/fAuPetZQnhS3hnajCf9CsWesghLQ==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      zod: ^3.25.0 || ^4.0.0
 
   zod@4.1.13:
     resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
@@ -6662,9 +6681,16 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-react-hooks@5.2.0(eslint@9.39.1(jiti@2.6.1)):
+  eslint-plugin-react-hooks@7.0.1(eslint@9.39.1(jiti@2.6.1)):
     dependencies:
+      '@babel/core': 7.28.5
+      '@babel/parser': 7.28.5
       eslint: 9.39.1(jiti@2.6.1)
+      hermes-parser: 0.25.1
+      zod: 4.1.13
+      zod-validation-error: 4.0.2(zod@4.1.13)
+    transitivePeerDependencies:
+      - supports-color
 
   eslint-plugin-react@7.37.5(eslint@9.39.1(jiti@2.6.1)):
     dependencies:
@@ -7002,6 +7028,8 @@ snapshots:
 
   globals@14.0.0: {}
 
+  globals@16.5.0: {}
+
   globalthis@1.0.4:
     dependencies:
       define-properties: 1.2.1
@@ -7051,6 +7079,12 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  hermes-estree@0.25.1: {}
+
+  hermes-parser@0.25.1:
+    dependencies:
+      hermes-estree: 0.25.1
 
   hookified@1.13.0: {}
 
@@ -8880,5 +8914,9 @@ snapshots:
 
   zimmerframe@1.1.4:
     optional: true
+
+  zod-validation-error@4.0.2(zod@4.1.13):
+    dependencies:
+      zod: 4.1.13
 
   zod@4.1.13: {}
