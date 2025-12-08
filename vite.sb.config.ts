@@ -10,12 +10,5 @@ export default defineConfig(({ mode }) => {
   process.env = { ...process.env, ...env };
   return {
     plugins: [tsconfigPaths()],
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: "modern-compiler",
-        },
-      },
-    },
   };
 });
