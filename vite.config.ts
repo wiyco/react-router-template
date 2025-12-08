@@ -8,7 +8,6 @@ export default defineConfig({
     reactRouter(),
     tsconfigPaths(),
     /** @see {@link https://react.dev/learn/react-compiler/installation#usage-with-react-router} */
-    // @ts-expect-error Babel plugin types are not correct
     babel({
       filter: /\.[jt]sx?$/,
       babelConfig: {
@@ -19,12 +18,5 @@ export default defineConfig({
   ],
   server: {
     port: 3000,
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: "modern-compiler",
-      },
-    },
   },
 });
