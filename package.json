@@ -29,8 +29,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
-    "@react-router/node": "^7.9.6",
-    "@react-router/serve": "^7.9.6",
+    "@react-router/node": "^7.10.1",
+    "@react-router/serve": "^7.10.1",
     "@tanstack/react-query": "5.90.11",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.25",
@@ -38,7 +38,7 @@
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-hook-form": "^7.67.0",
-    "react-router": "^7.9.6",
+    "react-router": "^7.10.1",
     "tailwind-merge": "^3.4.0",
     "tailwind-variants": "^3.2.2",
     "zod": "^4.1.13"
@@ -49,7 +49,7 @@
     "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.1",
-    "@react-router/dev": "^7.9.6",
+    "@react-router/dev": "^7.10.1",
     "@storybook/addon-links": "^10.1.4",
     "@storybook/addon-onboarding": "^10.1.4",
     "@storybook/addon-themes": "^10.1.4",
