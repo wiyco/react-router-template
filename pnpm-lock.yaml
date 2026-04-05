@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@hookform/resolvers':
         specifier: ^5.2.2
-        version: 5.2.2(react-hook-form@7.71.2(react@19.2.4))
+        version: 5.2.2(react-hook-form@7.72.0(react@19.2.4))
       '@react-router/node':
         specifier: ^7.13.2
         version: 7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
@@ -18,17 +18,17 @@ importers:
         specifier: ^7.13.2
         version: 7.13.2(react-router@7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       '@tanstack/react-query':
-        specifier: 5.90.21
-        version: 5.90.21(react@19.2.4)
+        specifier: 5.95.2
+        version: 5.95.2(react@19.2.4)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
       framer-motion:
-        specifier: ^12.36.0
-        version: 12.36.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^12.38.0
+        version: 12.38.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       isbot:
-        specifier: ^5.1.36
-        version: 5.1.36
+        specifier: ^5.1.37
+        version: 5.1.37
       react:
         specifier: ^19.2.4
         version: 19.2.4
@@ -36,8 +36,8 @@ importers:
         specifier: ^19.2.4
         version: 19.2.4(react@19.2.4)
       react-hook-form:
-        specifier: ^7.71.2
-        version: 7.71.2(react@19.2.4)
+        specifier: ^7.72.0
+        version: 7.72.0(react@19.2.4)
       react-router:
         specifier: ^7.13.2
         version: 7.13.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -1267,11 +1267,11 @@ packages:
       typescript:
         optional: true
 
-  '@tanstack/query-core@5.90.20':
-    resolution: {integrity: sha512-OMD2HLpNouXEfZJWcKeVKUgQ5n+n3A2JFmBaScpNDUqSrQSjiveC7dKMe53uJUg1nDG16ttFPz2xfilz6i2uVg==}
+  '@tanstack/query-core@5.95.2':
+    resolution: {integrity: sha512-o4T8vZHZET4Bib3jZ/tCW9/7080urD4c+0/AUaYVpIqOsr7y0reBc1oX3ttNaSW5mYyvZHctiQ/UOP2PfdmFEQ==}
 
-  '@tanstack/react-query@5.90.21':
-    resolution: {integrity: sha512-0Lu6y5t+tvlTJMTO7oh5NSpJfpg/5D41LlThfepTixPYkJ0sE2Jj0m0f6yYqujBwIXlId87e234+MxG3D3g7kg==}
+  '@tanstack/react-query@5.95.2':
+    resolution: {integrity: sha512-/wGkvLj/st5Ud1Q76KF1uFxScV7WeqN1slQx5280ycwAyYkIPGaRZAEgHxe3bjirSd5Zpwkj6zNcR4cqYni/ZA==}
     peerDependencies:
       react: ^18 || ^19
 
@@ -2357,8 +2357,8 @@ packages:
   fraction.js@5.3.4:
     resolution: {integrity: sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==}
 
-  framer-motion@12.36.0:
-    resolution: {integrity: sha512-4PqYHAT7gev0ke0wos+PyrcFxI0HScjm3asgU8nSYa8YzJFuwgIvdj3/s3ZaxLq0bUSboIn19A2WS/MHwLCvfw==}
+  framer-motion@12.38.0:
+    resolution: {integrity: sha512-rFYkY/pigbcswl1XQSb7q424kSTQ8q6eAC+YUsSKooHQYuLdzdHjrt6uxUC+PRAO++q5IS7+TamgIw1AphxR+g==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -2693,8 +2693,8 @@ packages:
   isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
 
-  isbot@5.1.36:
-    resolution: {integrity: sha512-C/ZtXyJqDPZ7G7JPr06ApWyYoHjYexQbS6hPYD4WYCzpv2Qes6Z+CCEfTX4Owzf+1EJ933PoI2p+B9v7wpGZBQ==}
+  isbot@5.1.37:
+    resolution: {integrity: sha512-5bcicX81xf6NlTEV8rWdg7Pk01LFizDetuYGHx6d/f6y3lR2/oo8IfxjzJqn1UdDEyCcwT9e7NRloj8DwCYujQ==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -3359,8 +3359,8 @@ packages:
     peerDependencies:
       react: ^19.2.4
 
-  react-hook-form@7.71.2:
-    resolution: {integrity: sha512-1CHvcDYzuRUNOflt4MOq3ZM46AronNJtQ1S7tnX6YN4y72qhgiUItpacZUAQ0TyWYci3yz1X+rXaSxiuEm86PA==}
+  react-hook-form@7.72.0:
+    resolution: {integrity: sha512-V4v6jubaf6JAurEaVnT9aUPKFbNtDgohj5CIgVGyPHvT9wRx5OZHVjz31GsxnPNI278XMu+ruFz+wGOscHaLKw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
@@ -4823,10 +4823,10 @@ snapshots:
 
   '@exodus/bytes@1.8.0': {}
 
-  '@hookform/resolvers@5.2.2(react-hook-form@7.71.2(react@19.2.4))':
+  '@hookform/resolvers@5.2.2(react-hook-form@7.72.0(react@19.2.4))':
     dependencies:
       '@standard-schema/utils': 0.3.0
-      react-hook-form: 7.71.2(react@19.2.4)
+      react-hook-form: 7.72.0(react@19.2.4)
 
   '@humanfs/core@0.19.1': {}
 
@@ -4983,7 +4983,7 @@ snapshots:
       dedent: 1.7.2
       es-module-lexer: 1.7.0
       exit-hook: 2.2.1
-      isbot: 5.1.36
+      isbot: 5.1.37
       jsesc: 3.0.2
       lodash: 4.17.23
       p-map: 7.0.4
@@ -5304,11 +5304,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/query-core@5.90.20': {}
+  '@tanstack/query-core@5.95.2': {}
 
-  '@tanstack/react-query@5.90.21(react@19.2.4)':
+  '@tanstack/react-query@5.95.2(react@19.2.4)':
     dependencies:
-      '@tanstack/query-core': 5.90.20
+      '@tanstack/query-core': 5.95.2
       react: 19.2.4
 
   '@testing-library/dom@10.4.0':
@@ -6654,7 +6654,7 @@ snapshots:
 
   fraction.js@5.3.4: {}
 
-  framer-motion@12.36.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  framer-motion@12.38.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       motion-dom: 12.38.0
       motion-utils: 12.36.0
@@ -6984,7 +6984,7 @@ snapshots:
 
   isarray@2.0.5: {}
 
-  isbot@5.1.36: {}
+  isbot@5.1.37: {}
 
   isexe@2.0.0: {}
 
@@ -7542,7 +7542,7 @@ snapshots:
       react: 19.2.4
       scheduler: 0.27.0
 
-  react-hook-form@7.71.2(react@19.2.4):
+  react-hook-form@7.72.0(react@19.2.4):
     dependencies:
       react: 19.2.4
 
